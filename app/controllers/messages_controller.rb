@@ -34,6 +34,6 @@ class MessagesController < MainApplicationController
 
     #Search for messages
     def search
-      json_response(@chat.messages.search(params[:body]))
+      json_response(Message.search params[:body], where: {chat_id: @chat.id})
     end
 end
