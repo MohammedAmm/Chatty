@@ -11,8 +11,9 @@ Chatty requires Ruby 2.5.x, a host application built on Rails 5.2, Mysql databas
 This project uses .env file, So you have to rename .env.example to .env, And fill desired values for variables.
 
 Notes: 
-*Both docker-compose.yml and Rails app use this configuration file so you don't have to write this twice.
-*Make sure there is no services are using these ports 3306, 9200, 3000, 6379, So you have to stop these services or kill the process run on the port.
+
+* `Both docker-compose.yml and Rails app use this configuration file so you don't have to write this twice`.
+* `Make sure there is no services are using these ports 3306, 9200, 3000, 6379, So you have to stop these services or kill the process run on the port.`
 
 ### Getting Started
 
@@ -42,7 +43,7 @@ Chatty's settings can be configured by adding variables to .env file then read i
 
 ### Search engine
 
-You can search messages http://localhost:3000/applications/{{application_token}}/chats/{{chat_number}}/messages/{{ message_number}}/search=?body=Any word:
+You can search messages within specific chat:
 Project uses elasticsearch to enhance message searching.
 
 #### Test
@@ -70,8 +71,8 @@ You can get rid of:
 
 by making an alias it will save you time xD.
 
-Included in this repo Postman Collection and Postman Env.
-Included brain-storm.txt that I follow while development.
+* `Included in this repo Postman Collection and Postman Env.`
+* `Included brain-storm.txt that I follow while development.`
 
 Feedback wanted
 ---------------
