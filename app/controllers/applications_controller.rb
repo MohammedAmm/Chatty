@@ -9,9 +9,9 @@ class ApplicationsController < MainApplicationController
 
   # POST /applications
   def create
-    @application = Application.create!(application_params)
-    RedisHandler.new('application', @application.id).create
-    json_response(@application, :created)
+    application = ApplicationCreator.new(application_params).execute
+   
+    json_response(application, :created)
   end
 
   # GET /applications/:token
