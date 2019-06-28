@@ -12,7 +12,9 @@ Requirements:
 11. Using redis for caching.
 12. Using sideqik as delayed job queue.
 13. Trying to make code DRY after satisify the Requirements.
-
+14. While creating chat and message two jobs are created, one for updating count with low priority, and creating new record with higher priority,
+    instead can write a scheduled job to update all data counts column from redis every hour but it will write to many records at the same time,
+    may be this is not really a good solution.
 Model:
 1.Application: id,name,token,chats_count,created_at,updated_at
 2.Chat: id,title,number,messages_count,application_id,created_at,updated_at
