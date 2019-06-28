@@ -1,0 +1,52 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7.26
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+  
+  redis:
+    image: redis:5.0-rc
+    container_name: redis
+    ports:
+      - "6379:6379"
+    links:
+      - db
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - redis
+      - elasticsearch
+  
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq -t 25 -C config/sidekiq.yml
+    volumes:
+      - .:/myapp
+    depends_on:
+      - db
+      - redis

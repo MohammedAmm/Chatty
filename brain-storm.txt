@@ -1,0 +1,20 @@
+Requirements:
+1. A user can create an application, by giving application name, so it suppose to be unique.
+2. A user will recieve a token after he successfully create an application.
+3. An application has many chats.
+4. A user can create a new chat, by giving application_id and title for chat this column can't be, this will be done with queue jobs, increase chats_count on redis, and chats_number.
+5. A use will revieve a number for this message, this number must be unique with application_id.
+6. A chat has many messages.
+7. A user can create a new message and will get number as identifier, this number unique with chat_id ,this will be done with queue jobs, increase chats_count on redis, and chats_number.
+8. A user can search chat's messages using elasticseach
+9. All requests must be resutful APIs.
+10. Writing Tests and using TDD If required.
+11. Using redis for caching.
+12. Using sideqik as delayed job queue.
+13. Trying to make code DRY after satisify the Requirements.
+
+Model:
+1.Application: id,name,token,chats_count,created_at,updated_at
+2.Chat: id,title,number,messages_count,application_id,created_at,updated_at
+3.Message: id,body,number,created_at,chat_id,updated_at
+
