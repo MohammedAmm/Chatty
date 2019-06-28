@@ -29,7 +29,7 @@ class ChatsController < MainApplicationController
   # DELETE /applications/:application_token/chats/:number
   def destroy
     @chat.destroy
-    @application.chats_redis_key_increament('chats_count')
+    RedisHandler.new('application',@application.id).decrement
     head :no_content
   end
 end
