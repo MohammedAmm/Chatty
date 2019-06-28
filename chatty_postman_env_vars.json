@@ -1,0 +1,30 @@
+{
+	"id": "aa91ba0a-a2e2-4671-b557-81574ef89871",
+	"name": "Chat-System-Dev",
+	"values": [
+		{
+			"key": "application_token",
+			"value": "",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "chat_number",
+			"value": "",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "message_number",
+			"value": "",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-06-28T17:42:38.935Z",
+	"_postman_exported_using": "Postman/6.7.1"
+}
