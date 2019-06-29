@@ -39,9 +39,7 @@ To stop the docker container, press `CTRL-C`.
 
 Chatty's settings can be configured by adding variables to .env file then read it within application, example:
 
-* `MYSQL_USERNAME=root`
 * `MYSQL_ROOT_PASSWORD=root`
-* `MYSQL_DATABASE=myapp_development`
 
 ### Search engine
 
@@ -53,6 +51,10 @@ Project uses elasticsearch to enhance message searching.
 To use Test Cases:
 
 You can start running test cases by simply migrating testing db with:
+
+    bundle exec rake db:create RAILS_ENV=test
+
+Then : 
 
     docker-compose run web rails db:migrate RAILS_ENV=test
 
