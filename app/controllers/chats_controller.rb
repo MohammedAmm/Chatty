@@ -28,8 +28,7 @@ class ChatsController < MainApplicationController
 
   # DELETE /applications/:application_token/chats/:number
   def destroy
-    @chat.destroy
-    RedisHandler.new('application',@application.id).decrement
+    ChatDeletor.new(@application).execute(@application.id)
     head :no_content
   end
 end

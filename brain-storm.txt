@@ -16,6 +16,7 @@ Requirements:
     instead can write a scheduled job to update all data counts column from redis every hour but it will write to many records at the same time,
     may be this is not really a good solution.
 15. Later may be its required to make update, delete services, and jobs, like creation cycle.
+16. Make service for deleting, a step to make the controller SOLID.
 Model:
 1.Application: id,name,token,chats_count,created_at,updated_at
 2.Chat: id,title,number,messages_count,application_id,created_at,updated_at

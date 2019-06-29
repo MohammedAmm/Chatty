@@ -27,7 +27,7 @@ class ApplicationsController < MainApplicationController
 
   # DELETE /applications/:token
   def destroy
-    @application.destroy
+    ApplicationDeletor.new(@application).execute
     head :no_content
   end
 end
