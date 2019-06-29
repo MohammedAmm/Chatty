@@ -1,6 +1,6 @@
 class ChatsController < MainApplicationController
-  include ApplicationC::Relate
-  include ChatC::Initialize
+  include Applicationable::Relate
+  include Chatable::Initialize
 
 
   # GET /applications/:application_token/chats

@@ -1,5 +1,5 @@
 class ApplicationsController < MainApplicationController
-  include ApplicationC::Initialize
+  include Applicationable::Initialize
 
   # GET /applications
   def index

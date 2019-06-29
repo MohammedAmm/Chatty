@@ -1,7 +1,7 @@
 class MessagesController < MainApplicationController
-    include ApplicationC::Relate
-    include ChatC::Relate
-    include MessageC::Initialize
+    include Applicationable::Relate
+    include Chatable::Relate
+    include Messagable::Initialize
   
     # GET /applications/:application_token/chats/:chat_number/messages
     def index

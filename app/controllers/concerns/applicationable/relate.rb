@@ -1,4 +1,4 @@
-module ApplicationC
+module Applicationable
     module Relate
         extend ActiveSupport::Concern
 

@@ -1,4 +1,4 @@
-module MessageC
+module Messagable
     module Initialize
         extend ActiveSupport::Concern
 

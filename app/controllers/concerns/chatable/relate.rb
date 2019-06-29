@@ -1,9 +1,9 @@
-module ChatC
-    module Initialize
+module Chatable
+    module Relate
         extend ActiveSupport::Concern
 
         included do
-            before_action :set_application_chat, only: [:show, :update, :destroy]
+            before_action :set_application_chat
         end  
 
         private
@@ -14,7 +14,7 @@ module ChatC
         end
       
         def set_application_chat
-          @chat = @application.chats.find_by!(number: params[:number]) if @application
+          @chat = @application.chats.find_by!(number: params[:chat_number]) if @application
         end
     end
 end
