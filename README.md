@@ -31,6 +31,8 @@ Third, Open new terminal or tab , To migrate your development database with:
 
 If all went according to plan, you should be able to see you can create your first application at: (http://localhost:3000/applications), this is API project only so don't need to add API to route.
 
+* If you got this error "max virtual memory areas vm.max_map_count [65530] is too low" you can run this command as adminstrator `sysctl -w vm.max_map_count=262144`.
+
 To stop the docker container, press `CTRL-C`.
 
 ## Configuration
