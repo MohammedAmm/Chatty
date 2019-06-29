@@ -52,7 +52,7 @@ To use Test Cases:
 
 You can start running test cases by simply migrating testing db with:
 
-    bundle exec rake db:create RAILS_ENV=test
+    docker-compose run web bundle exec rake db:create RAILS_ENV=test
 
 Then : 
 
