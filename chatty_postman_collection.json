@@ -61,7 +61,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -81,7 +81,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}?_method=PATCH",
+							"raw": "localhost:3000/applications/{{application_token}}",
 							"host": [
 								"localhost"
 							],
@@ -89,12 +89,6 @@
 							"path": [
 								"applications",
 								"{{application_token}}"
-							],
-							"query": [
-								{
-									"key": "_method",
-									"value": "PATCH"
-								}
 							]
 						}
 					},
@@ -103,14 +97,14 @@
 				{
 					"name": "delete",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}?_method=DELETE",
+							"raw": "localhost:3000/applications/{{application_token}}?",
 							"host": [
 								"localhost"
 							],
@@ -122,7 +116,8 @@
 							"query": [
 								{
 									"key": "_method",
-									"value": "DELETE"
+									"value": "DELETE",
+									"disabled": true
 								}
 							]
 						}
@@ -214,7 +209,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -227,7 +222,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}?_method=PATCH",
+							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}",
 							"host": [
 								"localhost"
 							],
@@ -237,12 +232,6 @@
 								"{{application_token}}",
 								"chats",
 								"{{chat_number}}"
-							],
-							"query": [
-								{
-									"key": "_method",
-									"value": "PATCH"
-								}
 							]
 						}
 					},
@@ -251,14 +240,14 @@
 				{
 					"name": "delete",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}?_method=DELETE",
+							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}",
 							"host": [
 								"localhost"
 							],
@@ -268,12 +257,6 @@
 								"{{application_token}}",
 								"chats",
 								"{{chat_number}}"
-							],
-							"query": [
-								{
-									"key": "_method",
-									"value": "DELETE"
-								}
 							]
 						}
 					},
@@ -370,7 +353,7 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -383,7 +366,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}/messages?_method=PATCH",
+							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}/messages",
 							"host": [
 								"localhost"
 							],
@@ -394,12 +377,6 @@
 								"chats",
 								"{{chat_number}}",
 								"messages"
-							],
-							"query": [
-								{
-									"key": "_method",
-									"value": "PATCH"
-								}
 							]
 						}
 					},
@@ -408,14 +385,14 @@
 				{
 					"name": "delete",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}/messages?_method=DELETE",
+							"raw": "localhost:3000/applications/{{application_token}}/chats/{{chat_number}}/messages/{{message_number}}",
 							"host": [
 								"localhost"
 							],
@@ -425,13 +402,8 @@
 								"{{application_token}}",
 								"chats",
 								"{{chat_number}}",
-								"messages"
-							],
-							"query": [
-								{
-									"key": "_method",
-									"value": "DELETE"
-								}
+								"messages",
+								"{{message_number}}"
 							]
 						}
 					},
