@@ -17,6 +17,16 @@ Requirements:
     may be this is not really a good solution.
 15. Later may be its required to make update, delete services, and jobs, like creation cycle.
 16. Make service for deleting, a step to make the controller SOLID.
+17. Deleting must be done within job, because the creating queue jobs would fail, Assuming many requests and deleting job 
+    executed first, so creating one would fail, may be there are two solutions, first make deleting jobs with low piriority, so we ensure that
+    no creating jobs when deleting job performing
+    second one to check to find if related record exists first but this will execute more queries
+    So may be first solution fits our needs.
+18. Now update jobs and delete jobs have the same priority, so may be deleting would be excuted before updating, so the updating job will fail
+    so easy solution will be using three priorities high(3) priority for create, default(2) for update, low(1) for delete.
+19. For deleting we must check first if the record exists to avoid job failing.
+    Solution: safe navigation operator help to solve this problem, it would return nil instead of raise exception and job fail.
+
 Model:
 1.Application: id,name,token,chats_count,created_at,updated_at
 2.Chat: id,title,number,messages_count,application_id,created_at,updated_at

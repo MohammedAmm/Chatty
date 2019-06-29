@@ -1,6 +1,6 @@
 module JChats
   class UpdateJob < ApplicationJob
-    queue_as :low
+    queue_as :default
   
     def perform(*args)
       # logger.debug(args[0][:chat_id])

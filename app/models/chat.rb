@@ -1,7 +1,5 @@
 class Chat < ApplicationRecord
-  #callbacks
-  # after_create :messages_redis
-
+  
   # model association
   belongs_to :application
   has_many :messages, dependent: :destroy

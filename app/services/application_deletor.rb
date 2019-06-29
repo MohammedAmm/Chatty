@@ -4,6 +4,7 @@ class ApplicationDeletor
     end
     
     def execute
-      @application.destroy
+      #Preform deleting application job with low priority
+      Applications::DeleteJob.perform_later(@application)
     end
 end

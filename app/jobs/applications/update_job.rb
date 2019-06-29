@@ -1,11 +1,9 @@
 module Applications
   class UpdateJob < ApplicationJob
-    queue_as :low
+    queue_as :default
   
     def perform(*args)
-      # logger.debug(args[0][:application_id])
-      # Do something later
-      logger.debug(args[0])
+      # update application record
       application = Application.find(args[0][:application_id])
       application.update(args[0].except(:application_id))
     end

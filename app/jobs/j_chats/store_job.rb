@@ -1,10 +1,9 @@
 module JChats
   class StoreJob < ApplicationJob
-    queue_as :default
+    queue_as :high
 
+    # args application_id, title
     def perform(*args)
-      # Find Application
-      logger.debug(args)
       Chat.create!(args)
     end
   end

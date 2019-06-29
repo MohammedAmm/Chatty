@@ -28,7 +28,7 @@ class ChatsController < MainApplicationController
 
   # DELETE /applications/:application_token/chats/:number
   def destroy
-    ChatDeletor.new(@application).execute(@application.id)
+    ChatDeletor.new(@chat).execute(@application.id)
     head :no_content
   end
 end
