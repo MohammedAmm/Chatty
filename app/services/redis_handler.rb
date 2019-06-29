@@ -25,6 +25,11 @@ class RedisHandler
     my_value.to_i
   end
 
+  def delete
+    key = "#{@first_part}s/#{@id}*"
+
+    Rails.cache.delete_matched key
+  end
   private
 
   def set_my_key(first_part, key, id)

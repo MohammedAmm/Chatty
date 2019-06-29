@@ -10,5 +10,7 @@ class ChatDeletor
       chats_count = RedisHandler.new('application', application_id).decrement
       #Decrement chats_count record at application table
       Applications::UpdateJob.perform_later({:application_id => application_id, :chats_count => chats_count})  
+      #Decrement messages_count
+      RedisHandler.new("applications/#{@chat.application_id}/chat",@chat.number).delete
     end
 end
