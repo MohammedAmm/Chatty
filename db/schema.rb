@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_06_29_152955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_id"], name: "index_messages_on_chat_id"
-    t.index ["number"], name: "index_messages_on_number"
+    t.index ["number", "chat_id"], name: "index_messages_on_number_and_chat_id", unique: true
   end
 
   add_foreign_key "chats", "applications"
