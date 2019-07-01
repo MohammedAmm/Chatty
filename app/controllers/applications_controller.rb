@@ -1,9 +1,7 @@
 class ApplicationsController < MainApplicationController
   include Applicationable::Initialize
-  require 'sidekiq/api'
   # GET /applications
   def index
-    Sidekiq::RetrySet.new.clear
     @applications = Application.all
     json_response(@applications)
   end
